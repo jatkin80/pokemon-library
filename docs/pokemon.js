@@ -1,43 +1,26 @@
- const url = new URL(window.location)
- const queryString = new URLSearchParams(url.search)
- const main = document.querySelector("main")
+const spinner = document.querySelector(".spinner")
+const ul = document.querySelector("ul")
 
- fetch(`https://pokeapi.co/api/v2/pokemon/${queryString.get("pokemon")}`)
-     .then(response => response.json())
-     .then(response => {
-         const name = `${ response.name }`;
-         const title = document.querySelector("title");
-         title.textContent = name;
-         const pokemonDetails = document.createElement("div")
-         pokemonDetails.classList = "pokemon-details"
-         pokemonDetails.innerHTML = `
-            <figure>
-                <img src="${response.sprites.front_shiny}" alt="${name}" />
-                <figcaption>${name}</figcaption>
-            </figure>
-            <h2>Abilities</h2>
-        `;
-         main.append(pokemonDetails);
-         const abilitiesRequests = response.abilities
-             .map(response => response.ability.url)
-             .map(url => {
-                 return fetch(url).then(response => response.json())
-             })
-         return Promise.all(abilitiesRequests)
-     }).then(responses => {
-         const ul = document.createElement("ul")
-         ul.classList = "abilities"
-         main.append(ul)
-         responses.map(response => {
-             const li = document.createElement("li")
-             li.innerHTML = `
-                <span class="ability-name">${response.name}</span>
-                <span class="ability-short-description">${response.effect_entries[1].short_effect}</span> 
-                `
-             return li;
-         }).forEach(li => {
-             ul.append(li)
-         })
-         const spinner = document.querySelector(".spinner")
-         spinner.classList.add("hidden")
-     })
+
+function addPokemonImage(pokemon) {
+    const div = document.createElement('div')
+    div.classList.add('pokemon-details')
+    div.innerHTML = `
+<figure>
+   <img src="${pokemon.sprites.front_default }" alt="${ pokemon.name}" />
+    <figcaption>"${pokemon.name}"</figcaption>
+        </figure>
+
+
+    `
+    ul.append(div)
+}
+const url = new URL(window.location)
+const queryString = new URLSearchParams(url.search)
+fetch(`https://pokeapi.co/api/v2/pokemon/${queryString.get("pokemon")}`)
+    .then(response => {
+        return response.json()
+    }).then(parsedResponse => {
+        spinner.classList.add('hidden')
+        addPokemonImage(parsedResponse)
+    })
