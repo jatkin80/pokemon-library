@@ -1,15 +1,13 @@
 const spinner = document.querySelector(".spinner")
 const ul = document.querySelector("ul")
 
-
 function addPokemonImage(pokemon) {
     const div = document.createElement("div")
-        //pokemonListing.classList = ('pokemon-listing')
+    div.classList.add('pokemon-listing')
     div.innerHTML = `
 <figure>
 <img src = "${pokemon.sprites.front_default }" alt = "${pokemon.name}" />
  <figcaption><a href="pokemon.html?pokemon=${pokemon.name}">${pokemon.name}</a></figcaption>
-
 </figure>
     `
     ul.append(div)
