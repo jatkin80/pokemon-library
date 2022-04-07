@@ -22,25 +22,24 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${ queryString.get( "pokemon" ) }`)
                 return fetch(url).then(response => response.json())
             })
         return Promise.all(abilitiesList)
-    }).then(response => {
-        const ul = document.createElement("ul")
-        ul.classList = ("abilities")
-        main.append(ul)
-        response.map(response => {
-                const li = document.createElement("li")
-                li.innerHTML = `
-<span class='ability-name'>
-${response.name}
-</span>
-<br>
- <span class='ability-short-description'>
- ${response.effect_entries[1].short_effect}
- </span>
+
+    })
+
+.then(responses => {
+    const ul = document.createElement("ul")
+    ul.classList = ("abilities")
+    main.append(ul)
+    responses.map(response => {
+        const li = document.createElement("li")
+        li.innerHTML = `
+<span class='ability-name'>${response.name}</span>
+ <span class='ability-short-description'>${response.effect_entries[1].short_effect}</span>
  `
-                return li;
-            })
-            .forEach(li => {
-                ul.append(li)
-            })
-        spinner.classList.add('hidden')
-    });
+        return li;
+    }).forEach(li => {
+        ul.append(li)
+    })
+    spinner.classList.add('hidden')
+});
+
+console.log(abilitiesList)

@@ -2,18 +2,18 @@ const spinner = document.querySelector(".spinner")
 const ul = document.querySelector("ul")
 
 
-function addPokemonImage(pokemon) {
+function addPokemonImage(response) {
     const div = document.createElement('div')
     div.classList.add('pokemon-listing')
     div.innerHTML = `
    <figure>
-       <img src = "${pokemon.sprites.front_default }" alt = "${pokemon.name}"/>
-       <figcaption> <a href="pokemon.html?pokemon=${pokemon.name}"> ${pokemon.name} </a></figcaption>
+       <img src = "${response.sprites.front_default}" alt = "${response.name}"/>
+       <figcaption> <a href="pokemon.html?pokemon=${response.id}"> ${response.name} </a></figcaption>
        </figure>
    `
     ul.append(div)
 }
-const url = "https://pokeapi.co/api/v2/pokemon/?limit=50"
+const url = "https://pokeapi.co/api/v2/pokemon/?limit=50&offset=62"
 fetch(url)
     .then(response => {
         return response.json()
