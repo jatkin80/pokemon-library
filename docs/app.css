@@ -30,17 +30,6 @@
                 padding-bottom: .6em;
             }
 
-            .pokemon {
-                list-style: none;
-                color: #222;
-                background-color: hsl(0, 0%, 100%);
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                padding: 2% 1%;
-                width: 70%;
-            }
-
             .pokemon-listing:hover {
                 animation: bounce 0.5s linear;
             }
