@@ -27,3 +27,9 @@ fetch(url)
             addPokemonImage(response)
         })
     })
+    .then(responses => {
+        spinner.classList.add('hidden')
+        responses.forEach(response => {
+            addPokemonImage(response)
+        })
+    })
