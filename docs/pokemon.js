@@ -28,12 +28,11 @@ function addAbilities(response) {
     const li = document.createElement("li")
     li.innerHTML = `
 <span class='ability-name'>${ response.name }</span>
+<br>
  <span class='ability-short-description'>${englishAbilities(response.effect_entries)}</span>
  `
     ul.append(li)
 }
-
-
 
 fetch(`https://pokeapi.co/api/v2/pokemon/${ queryString.get( "pokemon" ) }`)
     .then(response => response.json())

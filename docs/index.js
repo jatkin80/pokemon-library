@@ -1,7 +1,6 @@
 const spinner = document.querySelector(".spinner")
 const ul = document.querySelector("ul")
 
-
 function addPokemonImage(response) {
     const div = document.createElement('div')
     div.classList.add('pokemon-listing')

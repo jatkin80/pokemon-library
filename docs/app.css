@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Ubuntu&display=swap');
 body {
     font-family: 'Ubuntu', sans-serif;
     font-size: 16px;
@@ -39,10 +39,12 @@ a:visited {
 
 h1 {
     text-align: center;
-    font-size: 3em;
+    font-size: 3.5em;
     background-color: #f4f4f4;
     padding-top: .6em;
     padding-bottom: .6em;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-shadow: 0 0 2px #999090, 0 0 3px #0000FF;
 }
 
 .pokemon-listing:hover {
@@ -99,6 +101,7 @@ figcaption {
     letter-spacing: .2rem;
     font-size: 1.1em;
     font-weight: 600;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 @keyframes bounce {
