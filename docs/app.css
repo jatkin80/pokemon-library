@@ -1,92 +1,126 @@
-            body {
-                font-family: 'Ubuntu', sans-serif;
-                font-size: 16px;
-                height: 100vh;
-                margin: 2%;
-            }
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&family=Source+Sans+Pro&display=swap');
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    height: 100vh;
+    margin: 2%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
 
-            main {
-                display: flex;
-                justify-content: center;
-                background: url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png);
-                padding-top: 5em;
-                padding-bottom: 5em;
-            }
+main {
+    display: flex;
+    justify-content: center;
+    background: url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png);
+    padding-top: 5em;
+    padding-bottom: 5em;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
 
-            a {
-                color: #222;
-                text-decoration: none;
-            }
+@media only screen and (max-width: 600px) {
+    ul {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-content: center;
+    }
+}
 
-            a:visited {
-                color: #222;
-            }
+a {
+    color: #222;
+    text-decoration: none;
+}
 
-            h1 {
-                text-align: center;
-                font-size: 54px;
-                background-color: #f4f4f4;
-                padding-top: .6em;
-                padding-bottom: .6em;
-            }
+a:visited {
+    color: #222;
+}
 
-            .pokemon-listing:hover {
-                animation: bounce 0.5s linear;
-            }
+h1 {
+    text-align: center;
+    font-size: 3em;
+    background-color: #f4f4f4;
+    padding-top: .6em;
+    padding-bottom: .6em;
+}
 
-            .pokemon-listing {
-                text-transform: capitalize;
-                font-size: 2.5vh;
-                display: inline-block;
-                width: 25%;
-            }
+.pokemon-listing:hover {
+    animation: bounce 0.5s linear;
+}
 
-            .pokemon>.pokemon-listing {
-                margin-bottom: 2em;
-            }
+.pokemon-listing {
+    text-transform: capitalize;
+    font-size: 2.5vh;
+    display: inline-block;
+    width: 25%;
+}
 
-            figure {
-                width: 80%;
-                margin-left: auto;
-                margin-right: auto;
-            }
+.pokemon>.pokemon-listing {
+    margin-bottom: 2em;
+}
 
-            figure img {
-                display: block;
-                background-color: #f4f4f4;
-                width: auto;
-                margin-left: auto;
-                margin-right: auto;
-                padding: 2em;
-                border-radius: 5px;
-            }
+figure {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-            figcaption {
-                text-align: left;
-                margin-left: 18%;
-                margin-top: .5em;
-            }
+figure img {
+    display: block;
+    background-color: #f4f4f4;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em;
+    border-radius: 5px;
+}
 
-            @keyframes bounce {
-                20% {
-                    transform: translateY(-6px);
-                }
-                40% {
-                    transform: translateY(0px);
-                }
-                80% {
-                    transform: translateY(-2px);
-                }
-                100% {
-                    transform: translateY(0);
-                }
-            }
+@media only screen and (max-width: 600px) {
+    figure img {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
 
-            .spinner {
-                width: 80px;
-                background: transparent;
-            }
+@media only screen and (max-width: 600px) {
+    figure {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
 
-            .hidden {
-                display: none;
-            }
+figcaption {
+    text-align: left;
+    margin-left: 23%;
+    margin-top: .5em;
+    letter-spacing: .2rem;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+@keyframes bounce {
+    20% {
+        transform: translateY(-6px);
+    }
+    40% {
+        transform: translateY(0px);
+    }
+    80% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.spinner {
+    width: 80px;
+    background: transparent;
+}
+
+.hidden {
+    display: none;
+}
