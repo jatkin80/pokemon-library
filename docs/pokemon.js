@@ -28,7 +28,7 @@ function addAbilities(response) {
     const li = document.createElement("li")
     li.innerHTML = `
 <span class='ability-name'>${ response.name }</span>
- <span class='ability-short-description'>${englishAbilities(response.effect_entries)}</span>}
+ <span class='ability-short-description'>${englishAbilities(response.effect_entries)}</span>
  `
     ul.append(li)
 }
