@@ -13,7 +13,9 @@ function addPokemonImage(response) {
    `
     ul.append(div)
 }
-const url = "https://pokeapi.co/api/v2/pokemon/?limit=50&offset=62"
+
+const url = "https://pokeapi.co/api/v2/pokemon/?limit=50"
+console.log(url)
 fetch(url)
     .then(response => {
         return response.json()
