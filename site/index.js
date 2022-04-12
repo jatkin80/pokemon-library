@@ -7,11 +7,10 @@ function addPokemonImage (pokemon) {
   div.classList.add("pokemon-listing")
   const imageUrl = pokemon.sprites.front_default
   div.innerHTML = `
-    <figure> <a href= "pokemon.html?pokemon=${pokemon.name}">
-    <img src="${imageUrl }"alt="${pokemon.name}"/>
-   <figcaption>${pokemon.name}</figcaption>
-   </a>
-    </figure>
+      <figure> <a href= "pokemon.html?pokemon=${pokemon.name}">
+        <img src="${imageUrl }"alt="${pokemon.name}"/>
+        <figcaption>${pokemon.name}</figcaption></a>
+      </figure>
     `
   ul.append(div)
 }
