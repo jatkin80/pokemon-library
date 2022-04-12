@@ -8,11 +8,11 @@ function addPokemonImage (pokemon) {
   div.classList.add("pokemon-details")
   const imageUrl = pokemon.sprites.front_default
   div.innerHTML = `
-<figure>
-    <img src="${ imageUrl }" alt="${ pokemon.name }" />
-    <figcaption>${ pokemon.name }</figcaption>
-        </figure>
-        <h2>Abilities</h2>
+    <figure>
+      <img src="${ imageUrl }" alt="${ pokemon.name }" />
+      <figcaption>${ pokemon.name }</figcaption>
+    </figure>
+  <h2>Abilities</h2>
     `
   main.append(div)
 }
@@ -30,9 +30,8 @@ function addAbilities (enResponse) {
   const li = document.createElement("li")
   const abilitiesUrl = engAbilities(enResponse.effect_entries)
   li.innerHTML = `
-<span class='ability-name'>${ enResponse.name }</span>
-<br>
-  <span class='ability-short-description'>${ abilitiesUrl }</span>
+    <span class='ability-name'>${ enResponse.name }</span><br>
+    <span class='ability-short-description'>${ abilitiesUrl }</span>
   `
   ul.append(li)
 }
